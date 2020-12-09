@@ -1,0 +1,16 @@
+header {
+  background: url('../../assets/air-sky-cloud-background.jpg') no-repeat top center / cover;
+  box-shadow: 0 1px 15px 0px #7ccfff;
+}
+
+h2 {
+  padding-top: 100px;
+  height: 10rem;
+  font-size: 15rem;
+}
+
+p {
+  margin-top: 100px;
+  height: 5rem;
+  font-size: 3.5rem;
+}

@@ -1,0 +1,51 @@
+<div class="container-fluid px-0">
+  <div class="row m-0">
+    <div class="col p-0">
+      <header class="text-center text-light mx-0">
+        <h1 class="mat-display-3 py-3">{{ title }}</h1>
+      </header>
+    </div>
+  </div>
+</div>
+<section class="container mt-5">
+  <div class="row">
+    <div class="col-10">
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+          <td mat-cell *matCellDef="let day"> {{day.date}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="time">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Time </th>
+          <td mat-cell *matCellDef="let day"> {{day.time}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="temp">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Temperature </th>
+          <td mat-cell *matCellDef="let day"> {{day.temp}} °C </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="wind">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Wind Speed </th>
+          <td mat-cell *matCellDef="let day"> {{day.wind}} mi/h </td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef> Delete </th>
+          <td mat-cell *matCellDef="let element"><button mat-button (click)="delete(element)">&times;</button> </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+    </div>
+    <!-- <div class="col-2">
+      <button class="btn btn-info" (click)="addDay()">Add Day</button>
+    </div> -->
+  </div>
+</section>
